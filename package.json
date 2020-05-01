@@ -44,7 +44,9 @@
     "preversion": "npm test && npm run lint",
     "version": "npm run dist && npm run build && git add -A dist",
     "postversion": "git push && git push --tags",
-    "toc": "markdown-toc -i README.md && git add README.md"
+    "toc": "markdown-toc -i README.md && git add README.md",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "pre-commit": [
     "lint",
@@ -143,6 +145,8 @@
     "recompose": "^0.22.0",
     "redux": "^3.6.0",
     "screenfull": "^3.0.2",
-    "shortid": "^2.2.8"
-  }
+    "shortid": "^2.2.8",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
